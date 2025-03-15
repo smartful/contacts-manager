@@ -1,0 +1,141 @@
+:root {
+  --main-bg-color: #111;
+  --second-bg-color: hsl(24, 90%, 43%);
+  --second-bg-color-option: #hsl(24, 80%, 60%);
+  --main-action-color: #ff6e6e;
+  --main-foreground-color: #ddd;
+}
+
+body {
+  width: 1024px;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: var(--main-bg-color);
+  color: var(--main-foreground-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#en_tete {
+  width: 1024px;
+  height: 100px;
+  background-color: var(--second-bg-color);
+  margin-bottom: 10px;
+  color: black;
+  padding: 15px 0 0 30px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px var(--second-bg-color-option);
+}
+
+#corps {
+  margin-left: 140px;
+  min-height: calc(68vh - 150px);
+}
+
+#pied_de_page {
+  text-align: center;
+  margin-top: 230px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: black;
+  background-color: var(--second-bg-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--second-bg-color-option);
+}
+
+#menu {
+  float: left;
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.element_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--second-bg-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Boutons */
+
+.button {
+  width: 95px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin: 10px;
+}
+
+.cta_button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin: 10px;
+}
+
+.button a,
+.cta_button a {
+  color: black;
+}
+
+.actionButton {
+  background-color: var(--main-action-color);
+}
+
+.validationButton {
+  background-color: var(--second-bg-color);
+}
+
+.deconnexion_btn {
+  color: var(--main-action-color);
+}
+
+/* Formulaires */
+
+fieldset {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.form-row > label {
+  flex: 1;
+}
+
+.form-row > input, select {
+  flex: 2;
+}
+
+label {
+  color: var(--main-foreground-color);
+}
+
+input, select {
+  padding: 8px 10px;
+}
