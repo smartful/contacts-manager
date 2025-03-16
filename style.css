@@ -6,7 +6,13 @@
   --main-foreground-color: #ddd;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 10px;
   background-color: var(--main-bg-color);
@@ -15,11 +21,13 @@ body {
 }
 
 .container {
+  flex: 1;
   display: grid;
   grid-template-columns: 180px 1fr;
   grid-template-rows: auto 1fr auto;
   grid-gap: 15px;
-  max-width: 1024px;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -27,7 +35,7 @@ body {
   grid-column: 1 / span 2;
   background-color: var(--second-bg-color);
   border-radius: 15px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   color: black;
   box-shadow: 0 3px 8px var(--second-bg-color-option);
@@ -40,6 +48,7 @@ body {
   align-items: flex-start;
   padding: 15px;
 }
+
 /* Menu */
 
 #menu {
