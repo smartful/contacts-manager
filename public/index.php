@@ -1,11 +1,12 @@
 <?php
-require("./layout/layoutFunctions.php");
-echo htmlHead("Contacts Manager", "style");
+define('ROOT', dirname(__DIR__));
+require ROOT."/layout/layoutFunctions.php";
+echo htmlHead("Contacts Manager", "./style");
 ?>
     <body>
         <div class="container">
-            <?php include("./layout/header.php"); ?>
-            <?php include("menu.php"); ?>
+            <?php include(ROOT."/layout/header.php"); ?>
+            <?php include(ROOT."/layout/menu.php"); ?>
 
             <main id="corps">
                 <section class="login">
@@ -37,12 +38,12 @@ echo htmlHead("Contacts Manager", "style");
                     <p>
                         Sinon vous pouvez inscrire votre entreprise : <br/>
                         <button class="cta_button actionButton">
-                            <a href="registerForm.php">Inscription</a>
+                            <a href="register/registerForm.php">Inscription</a>
                         </button>
                     </p>
                 </section>
             </main>
-            <?php include("./layout/footer.php"); ?>
+            <?php include(ROOT."/layout/footer.php"); ?>
         </div>
     </body>
 </html>
