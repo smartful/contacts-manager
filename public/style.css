@@ -35,10 +35,13 @@ body {
   grid-column: 1 / span 2;
   background-color: var(--second-bg-color);
   border-radius: 15px;
-  padding: 10px;
   text-align: center;
   color: black;
   box-shadow: 0 3px 8px var(--second-bg-color-option);
+}
+
+#en_tete h1 {
+  margin: 15px 0;
 }
 
 #corps {
@@ -156,7 +159,7 @@ input {
   }
 
   #en_tete, #pied_de_page {
-    padding: 15px;
+    padding: 0 10px;
   }
 
   #corps {

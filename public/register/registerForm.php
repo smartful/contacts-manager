@@ -2,10 +2,6 @@
 define('ROOT', dirname(__DIR__, 2));
 require ROOT."/layout/layoutFunctions.php";
 echo htmlHead("Inscription", "../style");
-// include("./utils/connexion_db.php");
-// $cities = $bdd->query('SELECT * FROM cities ORDER BY city_name;');
-// $dataCities = $cities->fetchAll();
-// $cities->closeCursor();
 ?>
     <body>
         <div class="container">
@@ -16,41 +12,6 @@ echo htmlHead("Inscription", "../style");
             <!-- le corps -->
             <div id="corps">
                 <form method="post" action="registerFormProcess.php">
-                    <h2>Inscription de l'entreprise</h2>
-                    <fieldset>
-                        <legend>Description Principale</legend>
-                        <div class="group-form">
-                            <div class="form-row">
-                                <label for="company_name">Nom (raison social)</label>
-                                <input type=text name="company_name" id="company_name"/>
-                            </div>
-                            <div class="form-row">
-                                <label for="siret">SIRET (14 car.)</label>
-                                <input type=text name="siret" id="siret"/>
-                            </div>
-                            <div class="form-row">
-                                <label for="address_1">Adresse 1</label>
-                                <input type=text name="address_1" id="address_1"/>
-                            </div>
-                            <div class="form-row">
-                                <label for="address_2">Adresse 2</label>
-                                <input type=text name="address_2" id="address_2"/>
-                            </div>
-                            <div class="form-row">
-                                <label for="city">Ville</label>
-                                <input
-                                    type="text"
-                                    name="city_display"
-                                    id="city_display"
-                                    placeholder="Sélectionner une ville ou entrer le code postal..."
-                                    autocomplete="off"
-                                />
-                                <input type="hidden" name="city_id" id="city_id" />
-                                <div id="suggestions" class="suggestions"></div>
-                            </div>
-                        </div>
-                    </fieldset>
-
                     <h2>Inscription du gérant</h2>
                     <fieldset>
                         <legend>Description de l'utilisateur</legend>
@@ -62,14 +23,6 @@ echo htmlHead("Inscription", "../style");
                             <div class="form-row">
                                 <label for="lastname">Nom</label>
                                 <input type=text name="lastname" id="lastname"/>
-                            </div>
-                            <div class="form-row">
-                                <label for="position">Position</label>
-                                <select name="position" id="position">
-                                    <option value="CEO" selected>Gérant</option>
-                                    <option value="SALES">Commercial</option>
-                                    <option value="CLERK">Employé</option>
-                                </select>
                             </div>
                         </div>
                     </fieldset>
@@ -102,9 +55,10 @@ echo htmlHead("Inscription", "../style");
                     </p>
                 </form>
             </div>
-            <!-- <script src="./js/ajax/citiesAutocomplete.js"></script> -->
+
             <!-- le pied de page -->
             <?php include(ROOT."/layout/footer.php"); ?>
         </div>
+        <script src="../js/form/isConfirmPass.js"></script>
     </body>
 </html>
