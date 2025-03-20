@@ -49,7 +49,7 @@ echo htmlHead("Inscription", "../style");
                     $dataUser = $user->fetch();
                     $user->closeCursor();
 
-                    $_SESSION["id"] = $dataUser["id"];
+                    $_SESSION["user_id"] = $dataUser["id"];
                     $_SESSION["email"] = $dataUser["email"];
                     $_SESSION["firstname"] = $dataUser["firstname"];
                     $_SESSION["lastname"] = $dataUser["lastname"];

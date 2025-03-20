@@ -162,6 +162,22 @@ input {
   border: none;
 }
 
+/* Tableaux */
+
+table,
+th,
+td {
+  border: 3px ridge var(--second-bg-color);
+  border-collapse: collapse;
+  padding: 4px;
+}
+
+thead,
+tfoot {
+  background-color: rgb(50, 50, 50);
+}
+
+
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
