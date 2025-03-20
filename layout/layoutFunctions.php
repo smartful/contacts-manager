@@ -19,7 +19,7 @@ function deconnexionMenu(string $filePosition = ""): string {
       <h3>Product Order</h3>
       <a href="{$filePosition}home.php">Home</a>
       <a href="{$filePosition}profil.php">Profil</a>
-      <a href="{$filePosition}deconnexion.php" class="deconnexion_btn">Deconnexion</a>
+      <a href="{$filePosition}connexion/deconnexion.php" class="deconnexion_btn">Deconnexion</a>
     </div>
 </div>
 EOT;

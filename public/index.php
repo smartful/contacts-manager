@@ -15,13 +15,13 @@ echo htmlHead("Contacts Manager", "./style");
                         Si vous avez déjà un compte, vous pouvez saisir vos accès :
                     </p>
 
-                    <form method="post" action="loginProcess.php">
+                    <form method="post" action="./connexion/loginProcess.php">
                         <fieldset>
                             <legend>Vos accès</legend>
                             <div class="group-form">
                                 <div class="form-row">
                                     <label for="email">Email</label>
-                                    <input type=text name="email" id="email"/>
+                                    <input type=email name="email" id="email"/>
                                 </div>
 
                                 <div class="form-row">
@@ -36,7 +36,7 @@ echo htmlHead("Contacts Manager", "./style");
                     </form>
 
                     <p>
-                        Sinon vous pouvez inscrire votre entreprise : <br/>
+                        Sinon vous pouvez vous inscrire : <br/>
                         <button class="cta_button actionButton">
                             <a href="register/registerForm.php">Inscription</a>
                         </button>
