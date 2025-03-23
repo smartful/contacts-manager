@@ -49,12 +49,12 @@ echo htmlHead("Contacts", "../style");
                                 <td><?= $data[$i]["firstname"]; ?></td>
                                 <td><?= $data[$i]["lastname"]; ?></td>
                                 <td style="text-align:center;">
-                                    <a href="detailCustomer.php?id=<?= $data[$i]["id"]; ?>">
+                                    <a href="detailContact.php?id=<?= $data[$i]["id"]; ?>">
                                         <img src="../images/details.png" />
                                     </a>
                                 </td>
                                 <td style="text-align:center;">
-                                    <a href="deleteCustomer.php?id=<?= $data[$i]["id"]; ?>">
+                                    <a href="deleteContact.php?id=<?= $data[$i]["id"]; ?>">
                                         <img src="../images/supprimer.png" />
                                     </a>
                                 </td>

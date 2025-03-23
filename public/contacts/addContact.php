@@ -3,8 +3,6 @@ define('ROOT', dirname(__DIR__, 2));
 require(ROOT."/layout/layoutFunctions.php");
 session_start();
 echo htmlHead("Formulaire d'ajout", "../style");
-// include(ROOT."/utils/connexion_db.php");
-// $cities = $bdd->query('SELECT * FROM cities ORDER BY city_name;');
 ?>
     <body>
         <div class="container">
@@ -16,7 +14,7 @@ echo htmlHead("Formulaire d'ajout", "../style");
             <div id="menu_right">
                 <div class="element_menu element_to_left">
                     <h3>Activités</h3>
-                    <a href="contactList.php">Contacts</a>
+                    <a href="contactsList.php">Contacts</a>
                 </div>
             </div>
 
@@ -36,7 +34,7 @@ echo htmlHead("Formulaire d'ajout", "../style");
                                 <input type="text" name="lastname" id="lastname"/>
                             </div>
                             <div class="form-row">
-                                <label for="address_1">Adresse 1*</label> 
+                                <label for="address_1">Adresse 1</label> 
                                 <input type=text name="address_1" id="address_1"/>
                             </div>
                             <div class="form-row">
@@ -44,7 +42,7 @@ echo htmlHead("Formulaire d'ajout", "../style");
                                 <input type=text name="address_2" id="address_2"/>
                             </div>
                             <div class="form-row">
-                                <label for="city">Ville*</label> 
+                                <label for="city">Ville</label> 
                                 <input
                                     type="text"
                                     name="city_display"
@@ -56,11 +54,11 @@ echo htmlHead("Formulaire d'ajout", "../style");
                                 <div id="suggestions" class="suggestions"></div>
                             </div>
                             <div class="form-row">
-                                <label for="email">E-mail*</label> 
+                                <label for="email">E-mail</label> 
                                 <input type=email name="email" id="email"/>
                             </div>
                             <div class="form-row">
-                                <label for="phone">Téléphone*</label> 
+                                <label for="phone">Téléphone</label> 
                                 <input type=phone name="phone" id="phone"/>
                             </div>
                         </div>
