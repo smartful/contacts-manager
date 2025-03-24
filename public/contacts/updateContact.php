@@ -43,8 +43,10 @@ $contactId = intval($_GET["id"]);
             <div id="corps">
                 <h1>Modification d'un contact</h1>
                 <?php if ($data == false): ?>
-                    <?= "Vous n'êtes pas autorisé à accéder à ce contact ! <br/><br/>"; ?>
-                    <?= "Retournez sur la <a href='contactList.php'>page des contacts</a>.<br/>"; ?>
+                    <p>
+                        <?= "Vous n'êtes pas autorisé à accéder à ce contact ! <br/><br/>"; ?>
+                        <?= "Retournez sur la <a href='contactsList.php'>page des contacts</a>.<br/>"; ?>
+                    </p>
                 <?php else: ?>
                     <form method="post" action="updateContactProcess.php">
                         <input type="hidden" name="id_contact" value="<?= $data["id"]; ?>"/>
