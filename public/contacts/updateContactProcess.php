@@ -24,9 +24,8 @@ echo htmlHead("Formulaire de modification", "../style");
                     <?php
                     $displayText = "";
                     if (empty($_POST['id_contact'])) {
-                        $displayText .= "Il y a un problème sur le mapping du contact<br/>";
-                        $displayText .= "Veillez, s'il vous plait, réessayer : ";
-                        $displayText .= "<a href='contactsList.php'>Liste des contact</a>";
+                        $displayText .= "Vous n'êtes pas autorisé à accéder à ce contact !<br/>";
+                        $displayText .= "Veillez, retournez sur la <a href='contactsList.php'>liste des contact</a>";
                     } elseif (empty($_POST['firstname'])
                         OR empty($_POST['lastname'])
                         OR empty($_POST['address_1'])
