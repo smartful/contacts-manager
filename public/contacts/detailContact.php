@@ -23,24 +23,24 @@ $contactId = intval($_GET["id"]);
                 <h1>Contact</h1>
                 
                 <?php
-                    // On se connecte au la SGBD Mysql
-                    include(ROOT."/utils/connexion_db.php");
+                // On se connecte au la SGBD Mysql
+                include(ROOT."/utils/connexion_db.php");
 
-                    $contacts = $bdd->prepare("
-                        SELECT contacts.*, cities.city_name, cities.postal_code
-                        FROM contacts
-                        LEFT JOIN cities ON cities.id = contacts.city_id
-                        INNER JOIN users ON users.id = contacts.user_id
-                        WHERE contacts.id = :contact_id
-                        AND contacts.deleted = 0
-                        AND users.id = :user_id;
-                    ");
-                    $contacts->execute([
-                        "contact_id" => $contactId,
-                        "user_id"=> $_SESSION["user_id"],
-                    ]);
-                    $data = $contacts->fetch();
-                    $contacts->closeCursor();
+                $contacts = $bdd->prepare("
+                    SELECT contacts.*, cities.city_name, cities.postal_code
+                    FROM contacts
+                    LEFT JOIN cities ON cities.id = contacts.city_id
+                    INNER JOIN users ON users.id = contacts.user_id
+                    WHERE contacts.id = :contact_id
+                    AND contacts.deleted = 0
+                    AND users.id = :user_id;
+                ");
+                $contacts->execute([
+                    "contact_id" => $contactId,
+                    "user_id"=> $_SESSION["user_id"],
+                ]);
+                $data = $contacts->fetch();
+                $contacts->closeCursor();
                 ?>
 
                 <?php if ($data == false): ?>
@@ -71,7 +71,7 @@ $contactId = intval($_GET["id"]);
                                 <td><?= $data["email"]; ?></td>
                                 <td><?= $data["phone"]; ?></td>
                                 <td style="text-align:center;">
-                                    <a href="updateCustomer.php?id=<?= $data["id"]; ?>">
+                                    <a href="updateContact.php?id=<?= $data["id"]; ?>">
                                         <img src="../images/modifier.png" />
                                     </a>
                                 </td>
