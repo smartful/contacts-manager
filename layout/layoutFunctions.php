@@ -12,11 +12,23 @@ function htmlHead(string $title, string $cssFileName): string {
 EOT;
 }
 
+function menu(string $filePosition = ""): string {
+  return <<<EOT
+<div id="menu">
+    <div class="element_menu">
+      <h3>Contacts Manager</h3>
+      <a href="{$filePosition}index.php">Acceuil</a>
+      <a href="{$filePosition}register/registerForm.php">Inscription</a>
+    </div>
+</div>
+EOT;
+}
+
 function deconnexionMenu(string $filePosition = ""): string {
   return <<<EOT
 <div id="menu">
     <div class="element_menu">
-      <h3>Product Order</h3>
+      <h3>Contacts Manager</h3>
       <a href="{$filePosition}home.php">Home</a>
       <a href="{$filePosition}connexion/profil.php">Profil</a>
       <a href="{$filePosition}connexion/deconnexion.php" class="deconnexion_btn">Deconnexion</a>

@@ -6,8 +6,7 @@ echo htmlHead("Inscription", "../style");
     <body>
         <div class="container">
             <?php include(ROOT."/layout/header.php"); ?>
-            <!-- le menu -->
-            <?php include(ROOT."/layout/menu.php"); ?>
+            <?= menu("../") ?>
 
             <!-- le corps -->
             <div id="corps">

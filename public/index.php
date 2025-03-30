@@ -6,7 +6,7 @@ echo htmlHead("Contacts Manager", "./style");
     <body>
         <div class="container">
             <?php include(ROOT."/layout/header.php"); ?>
-            <?php include(ROOT."/layout/menu.php"); ?>
+            <?= menu("") ?>
 
             <main id="corps">
                 <section class="login">

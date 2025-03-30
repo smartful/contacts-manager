@@ -7,7 +7,7 @@ echo htmlHead("Product Order", "../style");
     <body>
         <div class="container">
             <?php include(ROOT."/layout/header.php"); ?>
-            <?php include(ROOT."/layout/menu.php"); ?>
+            <?= menu("../") ?>
 
             <div id="corps">
                 <p>
