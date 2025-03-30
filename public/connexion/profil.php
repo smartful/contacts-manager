@@ -10,7 +10,7 @@ echo htmlHead("Profil", "../style");
             <?= deconnexionMenu("../") ?>
 
             <!-- le menu des activités -->
-            <?php include(ROOT."/layout/themesMenu.php"); ?>
+            <?= themesMenu("../") ?>
 
             <div id="corps">
                 <h1>Mes informations</h1>

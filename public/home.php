@@ -11,7 +11,7 @@ echo htmlHead("Home", "./style");
             <?= deconnexionMenu() ?>
 
             <!-- le menu des activités -->
-            <?php include(ROOT."/layout/themesMenu.php"); ?>
+            <?= themesMenu() ?>
 
             <div id="corps">
                 <p>

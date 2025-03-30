@@ -24,6 +24,17 @@ function menu(string $filePosition = ""): string {
 EOT;
 }
 
+function themesMenu(string $filePosition = ""): string {
+  return <<<EOT
+<div id="menu_right">
+    <div class="element_menu element_to_left">
+      <h3>Activités</h3>
+      <a href="{$filePosition}contacts/contactsList.php">Contacts</a>
+    </div>
+</div>
+EOT;
+}
+
 function deconnexionMenu(string $filePosition = ""): string {
   return <<<EOT
 <div id="menu">
