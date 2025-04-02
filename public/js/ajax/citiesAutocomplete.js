@@ -10,8 +10,9 @@ cityInput.addEventListener("input", async function () {
         return;
     }
 
+    const BASE_URL = window.location.hostname === "localhost" ? "/contacts_manager/public" : "";
     try {
-        const response = await fetch(`/ajax/getCities.php?search=${encodeURIComponent(query)}`);
+        const response = await fetch(`${BASE_URL}/ajax/getCities.php?search=${encodeURIComponent(query)}`);
         const cities = await response.json();
 
         // Affiche les suggestions

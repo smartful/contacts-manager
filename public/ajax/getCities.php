@@ -1,5 +1,5 @@
 <?php
-define('ROOT', dirname(__DIR__));
+define('ROOT', dirname(__DIR__, 2));
 require(ROOT."/utils/connexion_db.php");
 
 if (!isset($_GET['search']) || empty($_GET['search'])) {
