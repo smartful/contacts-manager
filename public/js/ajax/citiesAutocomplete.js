@@ -11,7 +11,7 @@ cityInput.addEventListener("input", async function () {
     }
 
     try {
-        const response = await fetch(`/contacts_manager/ajax/getCities.php?search=${encodeURIComponent(query)}`);
+        const response = await fetch(`/ajax/getCities.php?search=${encodeURIComponent(query)}`);
         const cities = await response.json();
 
         // Affiche les suggestions
