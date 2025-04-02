@@ -1,6 +1,6 @@
 <?php
 define('ROOT', dirname(__DIR__, 2));
-require ROOT."/layout/layoutFunctions.php";
+require_once(ROOT."/layout/layoutFunctions.php");
 session_start();
 echo htmlHead("Inscription", "../style");
 ?>
@@ -16,7 +16,7 @@ echo htmlHead("Inscription", "../style");
 
                 // On vérifie que c'est le bon utilisateur
                 if ($_POST['email']!='' AND $_POST['pass']!='') {
-                    //On supprime le html qu'un utilisateur malveillant aurait pu introduire
+                    // On supprime le html qu'un utilisateur malveillant aurait pu introduire
                     $email = htmlspecialchars($_POST['email']);
                     $pass = htmlspecialchars($_POST['pass']);
 
@@ -40,8 +40,8 @@ echo htmlHead("Inscription", "../style");
                 if ($correctPassword) {
                     // On récupère les infos de l'utilisateur
                     $user = $bdd->prepare("SELECT * 
-                                            FROM users 
-                                            WHERE email = :email AND password = :password;");
+                                           FROM users 
+                                           WHERE email = :email AND password = :password;");
                     $user->execute([
                         "email" => $email,
                         "password" => $userPass['password']

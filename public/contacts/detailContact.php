@@ -1,7 +1,7 @@
 <?php
 define('ROOT', dirname(__DIR__, 2));
-require(ROOT."/layout/layoutFunctions.php");
-session_start();
+require_once(ROOT."/layout/layoutFunctions.php");
+require_once(ROOT."/utils/check_auth.php");
 echo htmlHead("Contacts", "../style");
 $contactId = intval($_GET["id"]);
 ?>

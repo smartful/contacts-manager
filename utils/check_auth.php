@@ -1,6 +1,6 @@
 <?php
 if (!defined('ROOT')) {
-    define('ROOT', dirname(__DIR__, 2));
+    define('ROOT', dirname(__DIR__));
 }
 $config = parse_ini_file(ROOT.'/.env');
 

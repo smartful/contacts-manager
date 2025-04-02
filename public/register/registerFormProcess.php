@@ -1,7 +1,6 @@
 <?php
 define('ROOT', dirname(__DIR__, 2));
 require ROOT."/layout/layoutFunctions.php";
-session_start();
 echo htmlHead("Product Order", "../style");
 ?>
     <body>
@@ -13,11 +12,14 @@ echo htmlHead("Product Order", "../style");
                 <p>
                     <?php
                     $displayText = "";
-                    if ($_POST['firstname'] != ""
-                            AND $_POST['lastname'] != ""
-                            AND $_POST['email'] != ""
-                            AND $_POST['pass'] != ""
-                            AND $_POST['confirm_pass'] != "") {
+                    if (empty($_POST['firstname'])
+                            AND empty($_POST['lastname'])
+                            AND empty($_POST['email'])
+                            AND empty($_POST['pass'])
+                            AND empty($_POST['confirm_pass'])) {
+                        $displayText .= "Vous n'avez pas saisie toutes les informations nécessaires<br/>";
+                        $displayText .= "Veillez, s'il vous plait, réessayer : <a href='./registerForm.php'>Inscription</a>";
+                    } else {
                         $firstname = htmlspecialchars($_POST['firstname']);
                         $lastname = htmlspecialchars($_POST['lastname']);
                         $email = htmlspecialchars($_POST['email']);
@@ -27,8 +29,7 @@ echo htmlHead("Product Order", "../style");
                         if ($pass == $confirmPass) {
                             $emailRegex = "#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#";
                             $passwordRegex = "#^[a-zA-Z0-9éèùà@&]{8,15}$#";
-                            if (preg_match($emailRegex, $email)
-                                    AND preg_match($passwordRegex, $pass)) {
+                            if (preg_match($emailRegex, $email) AND preg_match($passwordRegex, $pass)) {
                                 // On se connecte au la SGBD Mysql
                                 include(ROOT."/utils/connexion_db.php");
 
@@ -58,9 +59,6 @@ echo htmlHead("Product Order", "../style");
                             $displayText .= 'Votre mot de passe de confirmation est différent de votre mot de passe. <br/>';
                             $displayText .= "Veillez, s'il vous plait, réessayer : <a href='./registerForm.php'>Inscription</a>";
                         }
-                    } else {
-                        $displayText .= "Vous n'avez pas saisie toutes les informations nécessaires<br/>";
-                        $displayText .= "Veillez, s'il vous plait, réessayer : <a href='./registerForm.php'>Inscription</a>";
                     }
 
                     echo $displayText;
