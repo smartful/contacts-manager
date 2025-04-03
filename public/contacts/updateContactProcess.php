@@ -40,6 +40,7 @@ echo htmlHead("Formulaire de modification", "../style");
                         $idContact = intval($_POST['id_contact']);
                         $firstname = htmlspecialchars($_POST['firstname']);
                         $lastname = htmlspecialchars($_POST['lastname']);
+                        $imageUrl = htmlspecialchars($_POST['image_url']);
                         $address1 = htmlspecialchars($_POST['address_1']);
                         $address2 = isset($_POST['address_2']) ? htmlspecialchars($_POST['address_2']) : "";
                         $cityId = intval($_POST['city_id']);
@@ -51,7 +52,7 @@ echo htmlHead("Formulaire de modification", "../style");
 
                         $contact = $bdd->prepare("
                             UPDATE contacts
-                            SET firstname = :firstname, lastname = :lastname, address_1 = :address_1, address_2 = :address_2, 
+                            SET firstname = :firstname, lastname = :lastname, image_url = :image_url, address_1 = :address_1, address_2 = :address_2, 
                                 city_id = :city_id, email = :email, phone = :phone, update_date = NOW()
                             WHERE id = :id_contact
                             AND user_id = :user_id;
@@ -59,6 +60,7 @@ echo htmlHead("Formulaire de modification", "../style");
                         $contact->execute([
                             "firstname"=> $firstname,
                             "lastname"=> $lastname,
+                            "image_url"=> $imageUrl,
                             "user_id"=> $_SESSION["user_id"],
                             "address_1"=> $address1,
                             "address_2"=> $address2,

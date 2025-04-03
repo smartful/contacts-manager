@@ -53,6 +53,7 @@ $contactId = intval($_GET["id"]);
                     <table>
                         <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Adresse 1</th>
                                 <th>Adresse 2</th>
                                 <th>Ville</th>
@@ -64,6 +65,9 @@ $contactId = intval($_GET["id"]);
                         </thead>
                         <tbody>
                             <tr>
+                                <td>
+                                    <?= empty($data["image_url"]) ? "" : "<img src=".$data['image_url']." alt='image du contact' width='80' height='80' />" ?>
+                                </td>
                                 <td><?= $data["address_1"]; ?></td>
                                 <td><?= $data["address_2"]; ?></td>
                                 <td><?= $data["city_name"]; ?></td>

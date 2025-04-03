@@ -75,6 +75,16 @@ $contactId = intval($_GET["id"]);
                                     />
                                 </div>
                                 <div class="form-row">
+                                    <label for="lastname">Url de l'image du profil</label> 
+                                    <input
+                                        type="text"
+                                        name="image_url"
+                                        id="image_url"
+                                        size=10
+                                        value="<?= $data["image_url"]; ?>"
+                                    />
+                                </div>
+                                <div class="form-row">
                                     <label for="address_1">adresse 1*</label> 
                                     <input
                                         type="text"

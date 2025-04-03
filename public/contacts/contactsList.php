@@ -22,7 +22,7 @@ echo htmlHead("Contacts", "../style");
                 include(ROOT."/utils/connexion_db.php");
 
                 $contacts = $bdd->prepare("
-                    SELECT contacts.id, contacts.firstname, contacts.lastname
+                    SELECT contacts.id, contacts.firstname, contacts.lastname, contacts.image_url
                     FROM contacts
                     INNER JOIN users ON users.id = contacts.user_id
                     WHERE users.id = :user_id
@@ -37,6 +37,7 @@ echo htmlHead("Contacts", "../style");
                 <table>
                     <thead>
                         <tr>
+                            <th>Profil</th>
                             <th>Prénom</th>
                             <th>Nom</th>
                             <th>Détails</th>
@@ -46,6 +47,9 @@ echo htmlHead("Contacts", "../style");
                     <tbody>
                         <?php for($i=0; $i < count($data); $i++) :?>
                             <tr>
+                                <td>
+                                    <?= empty($data[$i]["image_url"]) ? "" : "<img src=".$data[$i]['image_url']." alt='image du contact' width='80' height='80' />" ?>
+                                </td>
                                 <td><?= $data[$i]["firstname"]; ?></td>
                                 <td><?= $data[$i]["lastname"]; ?></td>
                                 <td style="text-align:center;">

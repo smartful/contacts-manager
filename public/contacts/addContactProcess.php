@@ -30,6 +30,7 @@ echo htmlHead("Formulaire d'ajout", "../style");
                     } else {
                         $firstname = htmlspecialchars($_POST['firstname']);
                         $lastname = htmlspecialchars($_POST['lastname']);
+                        $imageUrl = htmlspecialchars($_POST['image_url']);
                         $address1 = htmlspecialchars($_POST['address_1']);
                         $address2 = isset($_POST['address_2']) ? htmlspecialchars($_POST['address_2']) : "";
                         $cityId = intval($_POST['city_id']);
@@ -40,15 +41,16 @@ echo htmlHead("Formulaire d'ajout", "../style");
                         include(ROOT."/utils/connexion_db.php");
 
                         $product = $bdd->prepare("
-                            INSERT INTO contacts(user_id, firstname, lastname, address_1, address_2, city_id, email, 
+                            INSERT INTO contacts(user_id, firstname, lastname, image_url, address_1, address_2, city_id, email, 
                                                     phone, add_date, update_date)
-                            VALUES(:user_id, :firstname, :lastname, :address_1, :address_2, :city_id, :email, 
+                            VALUES(:user_id, :firstname, :lastname, :image_url, :address_1, :address_2, :city_id, :email, 
                                     :phone, NOW(), NOW());
                         ");
                         $product->execute([
                             "user_id"=> $_SESSION["user_id"],
                             "firstname"=> $firstname,
                             "lastname"=> $lastname,
+                            "image_url"=> $imageUrl,
                             "address_1"=> $address1,
                             "address_2"=> $address2,
                             "city_id"=> $cityId,

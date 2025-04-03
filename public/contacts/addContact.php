@@ -34,6 +34,10 @@ echo htmlHead("Formulaire d'ajout", "../style");
                                 <input type="text" name="lastname" id="lastname"/>
                             </div>
                             <div class="form-row">
+                                <label for="image_url">Url de l'image du profil</label> 
+                                <input type="text" name="image_url" id="image_url"/>
+                            </div>
+                            <div class="form-row">
                                 <label for="address_1">Adresse 1</label> 
                                 <input type=text name="address_1" id="address_1"/>
                             </div>
