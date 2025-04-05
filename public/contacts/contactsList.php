@@ -16,6 +16,18 @@ echo htmlHead("Contacts", "../style");
                 <p>
                     <a href="addContact.php">Formulaire d'ajout</a>
                 </p>
+
+                <h2>Import Google</h2>
+                <div id="loader" class="container-fluid">
+                    <div class="text-center">
+                        <img src="../images/loader.gif" alt="Loading" />
+                    </div>
+                </div>
+
+                <div id="depot">Déposez le fichier des contacts ici (format .csv)</div>
+                <output id="file_names"></output>
+                <div id="import_process"></div>
+
                 <h2>Liste des contacts</h2>
                 <?php
                 // On se connecte au la SGBD Mysql
@@ -67,6 +79,7 @@ echo htmlHead("Contacts", "../style");
                     </tbody>
                 </table>
             </div>
+            <script src="../js/ajax/process_import_google_data.js"></script>
             <?php include(ROOT."/layout/footer.php"); ?>
         </div>
     </body>

@@ -3,6 +3,7 @@
   --second-bg-color: hsl(24, 90%, 43%);
   --second-bg-color-option: hsl(24, 80%, 60%);
   --main-action-color: hsl(0, 90%, 50%);
+  --main-action-color-option: hsl(0, 90%, 80%);
   --main-foreground-color: #ddd;
 }
 
@@ -201,6 +202,23 @@ tfoot {
 .suggestion-item:hover {
   background-color: var(--second-bg-color-option);
   color: var(--main-bg-color);
+}
+
+/* Drag & Drop */
+
+#depot {
+  border:5px var(--main-action-color) dashed;
+  background-color: var(--main-action-color-option);
+  color: black;
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+}
+
+/* Loader */
+
+#loader {
+  display: none;
 }
 
 /* Responsive */

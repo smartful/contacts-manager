@@ -1,6 +1,6 @@
 <?php
 define('ROOT', dirname(__DIR__, 2));
-require(ROOT."/utils/connexion_db.php");
+require_once(ROOT."/utils/connexion_db.php");
 
 if (!isset($_GET['search']) || empty($_GET['search'])) {
     echo json_encode([]);
